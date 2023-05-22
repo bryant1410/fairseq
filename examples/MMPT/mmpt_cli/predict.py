@@ -44,7 +44,8 @@ def get_dataloader(config):
         test_data,
         batch_size=config.fairseq.dataset.batch_size,
         shuffle=False,
-        num_workers=6,
+        num_workers=4,
+        pin_memory=True,
         collate_fn=test_data.collater,
     )
     return test_dataloader

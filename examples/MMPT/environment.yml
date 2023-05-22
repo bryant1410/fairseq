@@ -1,0 +1,13 @@
+name: videoclip
+dependencies:
+  - pip:
+    - -e .
+    - -e ../../
+    - gpustat
+    - tensorboard
+    - tensorboardX
+    # - torch==1.8
+    - transformers==3.4
+  - pandas
+  - python=3.8
+  - pip

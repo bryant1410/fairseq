@@ -701,7 +701,10 @@ class COINActionSegmentationMetaProcessor(MetaProcessor):
         print("num of labels", len(id2label))
 
         for video_id, rec in database.items():
-            if not os.path.isfile(os.path.join(config.vfeat_dir, video_id + ".npy")):
+            path = os.path.join(config.vfeat_dir, video_id + ".npy")
+            if not os.path.isfile(path):
+                print(f"Warning when trying to check the video feature files:"
+                      f" the file {path} doesn't exist or is not a file.")
                 continue
             if rec["subset"] == COINActionSegmentationMetaProcessor.split_map[self.split]:
                 starts, ends, labels = [], [], []
